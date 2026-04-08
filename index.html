@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeeTec Shop | Tecnología en tus manos</title>
+    <meta name="description" content="Encuentra lo último en tecnología y accesorios en BeeTec Shop. Envíos gratis a todo el Perú y pago contra entrega.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🚀 ENVÍOS A TODO EL PERÚ 100% GRATIS</span>
+            <span>🏠 PAGO CONTRA ENTREGA DISPONIBLE</span>
+            <span>⚡ OFERTAS EXCLUSIVAS CADA SEMANA</span>
+            <span>🚀 ENVÍOS A TODO EL PERÚ 100% GRATIS</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-bee">BEE</span><span class="logo-tec">TEC</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#catalog">Catálogo</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-icon" id="cart-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home / Hero Section -->
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">PRODUCTO ESTRELLA 2026</span>
+                    <h1>Cafetera Portátil <span class="highlight">Espresso Pro</span></h1>
+                    <p>Lleva la experiencia del mejor café barista a cualquier lugar. Compacta, elegante y potente.</p>
+                    <div class="hero-cta">
+                        <a href="#catalog" class="btn btn-primary">Ver Catálogo</a>
+                        <a href="#contact" class="btn btn-secondary">Contactar</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-orb"></div>
+                    <img src="hero-product.png" alt="Cafetera Portátil Espresso BeeTec" class="floating-img">
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- Catalog Section -->
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Catálogo <span class="highlight">BeeTec</span></h2>
+                    <p>Selección premium de accesorios y gadgets tecnológicos.</p>
+                </div>
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be rendered dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <h2>¿Listo para <span class="highlight">mejorar tu vida?</span></h2>
+                    <p>Escríbenos directamente y gestionaremos tu pedido al instante. ¡Sin complicaciones!</p>
+                    <div class="contact-methods">
+                        <div class="method-item">
+                            <div class="icon">📱</div>
+                            <div>
+                                <h4>WhatsApp Directo</h4>
+                                <p>+51 900 000 000</p>
+                            </div>
+                        </div>
+                        <div class="method-item">
+                            <div class="icon">📍</div>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Lima, Perú - Envíos a todo el país</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Producto de interés</label>
+                            <textarea id="message" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary wide">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <span class="logo-bee">BEE</span><span class="logo-tec">TEC</span>
+                </div>
+                <p>&copy; 2026 BeeTec Shop. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IG</a>
+                    <a href="#">TK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="#" class="whatsapp-float">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.559.925 3.51 1.488 5.541 1.489 5.435.001 9.858-4.426 9.863-9.864 0-2.633-1.025-5.11-2.887-6.97s-4.337-2.887-6.97-2.887c-5.438 0-9.863 4.426-9.863 9.864 0 2.097.533 4.145 1.545 5.893l-1.003 3.664 3.774-.989zm11.332-6.6a1.005 1.005 0 0 0-.294-.486l-2.023-1.424c-.183-.129-.413-.158-.614-.076s-.354.266-.395.48l-.208 1.053c-.048.24-.167.458-.336.62s-.413.251-.62.251c-.131 0-.262-.03-.38-.093l-3.34-1.782a2.008 2.008 0 0 1-.954-1.22l-.183-1.066c-.035-.205.021-.413.155-.575s.345-.251.552-.251l.823-.001c.205 0 .399-.104.512-.275s.124-.388.026-.575l-1.011-1.914c-.114-.216-.341-.351-.585-.351h-.032c-.221 0-.427.108-.551.288l-.756 1.096a3.513 3.513 0 0 0-.742 2.136c0 1.252.41 2.477 1.163 3.48a9.495 9.495 0 0 0 2.628 2.378l1.416.742c.813.426 1.705.642 2.61.642.492 0 .983-.063 1.458-.184l1.45-.37c.38-.097.66-.411.713-.8s-.11-.767-.384-.959z"/></svg>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>
