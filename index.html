@@ -30,7 +30,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#catalog">Catálogo</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#reviews">Comentarios</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="cart-icon" id="cart-toggle">
@@ -45,21 +45,14 @@
         <section id="home" class="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <span class="badge">PRODUCTO ESTRELLA 2026</span>
-                    <h1>Cafetera Portátil <span class="highlight">Espresso Pro</span></h1>
-                    <p>Lleva la experiencia del mejor café barista a cualquier lugar. Compacta, elegante y potente.</p>
-                    <div class="hero-cta">
-                        <a href="#catalog" class="btn btn-primary">Ver Catálogo</a>
-                        <a href="#contact" class="btn btn-secondary">Contactar</a>
-                    </div>
+                    <span class="badge">Más de 1.250 Pedidos Entregados</span>
+                    <h1>BeeTec<br><span class="highlight">Tienda en Línea</span></h1>
+                    <p>Ofrecemos los productos de tecnología más innovadores para tu hogar, diseñados para mejorar tu calidad de vida.</p>
                 </div>
                 <div class="hero-image">
                     <div class="image-orb"></div>
-                    <img src="hero-product.png" alt="Cafetera Portátil Espresso BeeTec" class="floating-img">
+                    <img src="hero-product.png" alt="logo" class="floating-img">
                 </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="mouse"></div>
             </div>
         </section>
 
@@ -67,54 +60,173 @@
         <section id="catalog" class="catalog">
             <div class="container">
                 <div class="section-header">
-                    <h2>Catálogo <span class="highlight">BeeTec</span></h2>
-                    <p>Selección premium de accesorios y gadgets tecnológicos.</p>
+                    <h2>Nuestros <span class="highlight">Productos</span></h2>
+                    <p>Tecnología innovadora para mejorar tu día a día</p>
                 </div>
-                <div class="product-grid" id="product-grid">
-                    <!-- Products will be rendered dynamically -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container contact-grid">
-                <div class="contact-info">
-                    <h2>¿Listo para <span class="highlight">mejorar tu vida?</span></h2>
-                    <p>Escríbenos directamente y gestionaremos tu pedido al instante. ¡Sin complicaciones!</p>
-                    <div class="contact-methods">
-                        <div class="method-item">
-                            <div class="icon">📱</div>
-                            <div>
-                                <h4>WhatsApp Directo</h4>
-                                <p>+51 900 000 000</p>
-                            </div>
-                        </div>
-                        <div class="method-item">
-                            <div class="icon">📍</div>
-                            <div>
-                                <h4>Ubicación</h4>
-                                <p>Lima, Perú - Envíos a todo el país</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Producto de interés</label>
-                            <textarea id="message" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary wide">Enviar Mensaje</button>
-                    </form>
+                <div class="products-grid" id="products-grid">
+                    <!-- Productos se cargarán dinámicamente -->
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que dicen nuestros <span class="highlight">Clientes</span></h2>
+                <p>Opiniones reales de usuarios satisfechos</p>
+            </div>
+            <div class="reviews-carousel">
+                <button class="carousel-btn carousel-prev" onclick="scrollReviews(-1)">‹</button>
+                <div class="reviews-track" id="reviews-track">
+                    <!-- Los comentarios se cargarán dinámicamente -->
+                </div>
+                <button class="carousel-btn carousel-next" onclick="scrollReviews(1)">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal hidden">
+        <div class="modal-content product-detail">
+            <button class="modal-close" onclick="closeProductModal()">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-media">
+                    <video id="modal-video" controls style="display:block; width:100%; border-radius:12px;"></video>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <div class="price-section">
+                        <span id="modal-price" class="price"></span>
+                        <span class="currency">S/</span>
+                    </div>
+                    <div id="modal-specs" class="specs"></div>
+                    <div id="modal-benefits" class="benefits"></div>
+                    <div class="quantity-section">
+                        <label>Cantidad:</label>
+                        <div class="quantity-control">
+                            <button onclick="decreaseQty()">−</button>
+                            <input type="number" id="qty-input" value="1" min="1">
+                            <button onclick="increaseQty()">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" onclick="addToCart()">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar hidden">
+        <div class="cart-header">
+            <h2>Mi Carrito</h2>
+            <button class="close-btn" onclick="closeCart()">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Items se agregan aquí -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">S/ 0.00</span>
+            </div>
+            <button class="btn btn-primary" onclick="openCheckout()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content checkout-form">
+            <button class="modal-close" onclick="closeCheckout()">&times;</button>
+            <h2>Información de Entrega</h2>
+            <form id="checkout-form" onsubmit="submitOrder(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nombre Completo *</label>
+                        <input type="text" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI *</label>
+                        <input type="text" name="dni" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Teléfono *</label>
+                        <input type="tel" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo *</label>
+                        <input type="email" name="correo" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Ciudad *</label>
+                    <select name="ciudad" required>
+                        <option value="">Selecciona tu ciudad</option>
+                        <option value="lima">Lima</option>
+                        <option value="provincia">Provincia</option>
+                        <option value="otra">Otra Ciudad</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Dirección *</label>
+                    <textarea name="direccion" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Referencia</label>
+                    <input type="text" name="referencia" placeholder="Casa azul, cerca del parque...">
+                </div>
+                <div class="form-group">
+                    <label>Método de Pago *</label>
+                    <select name="metodo_pago" required>
+                        <option value="">Selecciona método</option>
+                        <option value="contraentrega">Pago Contraentrega</option>
+                        <option value="transferencia">Transferencia Bancaria</option>
+                        <option value="yape">Yape/Plin</option>
+                    </select>
+                </div>
+                <div class="order-summary">
+                    <h3>Resumen del Pedido</h3>
+                    <div id="summary-items"></div>
+                    <div class="summary-total">
+                        <span>Total a Pagar:</span>
+                        <span id="summary-total">S/ 0.00</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary wide">Confirmar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal hidden">
+        <div class="modal-content success-message">
+            <div class="success-icon">✓</div>
+            <h2>¡Pedido Confirmado!</h2>
+            <p id="success-message"></p>
+            <button class="btn btn-primary" onclick="closeSuccess()">Continuar Comprando</button>
+        </div>
+    </div>
+
+    <!-- TODO chatbot Floating Button -->
+    
+    <button id="chatbot-toggle" class="chatbot-toggle">
+        💬
+    </button>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-container" class="chatbot-hidden">
+        <div class="chatbot-window">
+            <div class="chatbot-header">
+                <h3>BeeTec Shop 💬</h3>
+                <button id="chatbot-close" class="chatbot-close">&times;</button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages"></div>
+            <div id="chatbot-buttons" class="chatbot-buttons"></div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -131,11 +243,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="#" class="whatsapp-float">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.559.925 3.51 1.488 5.541 1.489 5.435.001 9.858-4.426 9.863-9.864 0-2.633-1.025-5.11-2.887-6.97s-4.337-2.887-6.97-2.887c-5.438 0-9.863 4.426-9.863 9.864 0 2.097.533 4.145 1.545 5.893l-1.003 3.664 3.774-.989zm11.332-6.6a1.005 1.005 0 0 0-.294-.486l-2.023-1.424c-.183-.129-.413-.158-.614-.076s-.354.266-.395.48l-.208 1.053c-.048.24-.167.458-.336.62s-.413.251-.62.251c-.131 0-.262-.03-.38-.093l-3.34-1.782a2.008 2.008 0 0 1-.954-1.22l-.183-1.066c-.035-.205.021-.413.155-.575s.345-.251.552-.251l.823-.001c.205 0 .399-.104.512-.275s.124-.388.026-.575l-1.011-1.914c-.114-.216-.341-.351-.585-.351h-.032c-.221 0-.427.108-.551.288l-.756 1.096a3.513 3.513 0 0 0-.742 2.136c0 1.252.41 2.477 1.163 3.48a9.495 9.495 0 0 0 2.628 2.378l1.416.742c.813.426 1.705.642 2.61.642.492 0 .983-.063 1.458-.184l1.45-.37c.38-.097.66-.411.713-.8s-.11-.767-.384-.959z"/></svg>
-    </a>
 
     <script src="main.js"></script>
 </body>
