@@ -248,7 +248,7 @@ section {
     font-size: 0.7rem;
     font-weight: 800;
     margin-bottom: 30px;
-    border: 1.5px solid rgba(255, 215, 0, 0.45);
+    border: 1.5px solid rgba(0, 0, 0, 0.45);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -289,7 +289,7 @@ section {
 }
 
 .floating-img {
-    max-width: 80%;
+    max-width: 150%;
     height: auto;
     animation: float 6s ease-in-out infinite;
     z-index: 1;
