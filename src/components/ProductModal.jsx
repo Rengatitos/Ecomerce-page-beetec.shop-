@@ -14,10 +14,10 @@ export default function ProductModal({ product, isOpen, onClose }) {
           <div className="modal-media">
             {product.video ? (
               <video controls style={{ width: '100%', borderRadius: '12px' }}>
-                <source src={product.video} type="video/mp4" />
+                <source src={`/images/${product.video}`} type="video/mp4" />
               </video>
             ) : (
-              <img src={product.imagen} alt={product.nombre} />
+              <img src={`/images/${product.imagen}`} alt={product.nombre} />
             )}
           </div>
 

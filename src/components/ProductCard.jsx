@@ -2,7 +2,7 @@ export default function ProductCard({ product, onViewDetails }) {
   return (
     <div className="product-card" onClick={() => onViewDetails(product)}>
       <div className="product-image">
-        <img src={product.imagen} alt={product.nombre} />
+        <img src={`/images/${product.imagen}`} alt={product.nombre} />
       </div>
       <div className="product-info">
         <h3 className="product-name">{product.nombre}</h3>

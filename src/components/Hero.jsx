@@ -43,7 +43,7 @@ export default function Hero() {
               BeeTec<br />
               <span className="highlight-gradient">Tienda en Línea</span>
             </h1>
-            <img src="logo.png" alt="BeeTec Logo" className="floating-img mobile-logo" />
+            <img src="/images/logo.png" alt="BeeTec Logo" className="floating-img mobile-logo" />
           </div>
 
           <SocialLinks />
@@ -75,7 +75,7 @@ export default function Hero() {
 
         <div className="hero-image">
           <div className="image-orb"></div>
-          <img src="logo.png" alt="BeeTec Logo" className="floating-img desktop-logo" />
+          <img src="/images/logo.png" alt="BeeTec Logo" className="floating-img desktop-logo" />
         </div>
       </div>
     </section>
