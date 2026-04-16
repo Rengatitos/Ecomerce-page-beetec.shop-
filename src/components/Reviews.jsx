@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { reviewsData } from '../data/reviews';
 import ReviewCard from './ReviewCard';
 
@@ -14,6 +14,35 @@ export default function Reviews() {
       });
     }
   };
+
+  // Auto-scroll en mobile cada 7 segundos
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      if (reviewsTrackRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = reviewsTrackRef.current;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        // Si llegó al final, vuelve al inicio
+        if (scrollLeft >= maxScroll - 10) {
+          reviewsTrackRef.current.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          // Scrollea al siguiente elemento (370px = tarjeta + gap)
+          reviewsTrackRef.current.scrollBy({
+            left: 370,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="reviews" className="reviews">

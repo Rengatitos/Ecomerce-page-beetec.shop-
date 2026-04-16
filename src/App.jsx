@@ -4,6 +4,8 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Catalog from './components/Catalog';
 import Reviews from './components/Reviews';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import ProductModal from './components/ProductModal';
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
         <Catalog onViewDetails={handleViewDetails} />
       </main>
       <Reviews />
+      <Contact />
+      <Footer />
       <ProductModal 
         product={selectedProduct}
         isOpen={isModalOpen}

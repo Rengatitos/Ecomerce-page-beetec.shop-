@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de Reclamaciones - BeeTec</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fffbf0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: #FFF8DC;
+            padding: 20px;
+            border-left: 4px solid #FFD700;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .form-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        input, textarea, select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            margin-bottom: 15px;
+        }
+        button {
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #FFE933;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Libro de Reclamaciones - INDECOPI</h1>
+        <p class="last-update">En cumplimiento de la Ley de Protección del Consumidor del Perú</p>
+
+        <h2>Información Legal</h2>
+        <p>
+            De acuerdo con la Ley de Protección del Consumidor Nº 29571 y sus normas reglamentarias, BeeTec pone a disposición de nuestros clientes este Libro de Reclamaciones virtual para registrar cualquier insatisfacción o disconformidad con nuestros productos o servicios.
+        </p>
+
+        <div class="highlight">
+            <p>
+                <strong>Importante:</strong> Como consumidor peruano, tienes derecho a presentar reclamaciones sin costo alguno. Toda reclamación debe ser registrada y respondida dentro de 30 días hábiles.
+            </p>
+        </div>
+
+        <h2>¿Qué es una Reclamación?</h2>
+        <p>
+            Una reclamación es la manifestación de insatisfacción o disconformidad respecto a la calidad, especificaciones, cantidades, precios, envíos, garantía o cualquier otra característica de un producto o servicio ofrecido por BeeTec.
+        </p>
+
+        <h2>¿Qué es un Reclamo?</h2>
+        <p>
+            Son solicitudes de resolución de conflictos relacionado a incumplimiento de obligaciones derivadas de relaciones de consumo, incluyendo:
+        </p>
+        <ul>
+            <li>Productos defectuosos o con fallas</li>
+            <li>Incumplimiento de plazos de entrega</li>
+            <li>Errores en pedidos o cantidades</li>
+            <li>Productos que no coinciden con la descripción</li>
+            <li>Problemas de garantía</li>
+            <li>Mal trato del personal</li>
+        </ul>
+
+        <h2>Cómo Presentar una Reclamación</h2>
+        <p>
+            Puedes registrar tu reclamación de las siguientes maneras:
+        </p>
+        <ul>
+            <li><strong>Por formulario online:</strong> Completa el formulario abajo</li>
+            <li><strong>Por email:</strong> murdaneguigago@gmail.com (con subject: "RECLAMACIÓN")</li>
+            <li><strong>Por teléfono:</strong> +51 903 232 658</li>
+            <li><strong>En persona:</strong> Contáctanos para conocer nuestra ubicación</li>
+        </ul>
+
+        <h2>Información que Debe Contener tu Reclamación</h2>
+        <ul>
+            <li>Número de orden de compra y fecha</li>
+            <li>Nombre completo y contacto del cliente</li>
+            <li>Descripción detallada del problema</li>
+            <li>Fotografías o evidencia (si aplica)</li>
+            <li>Solución que solicitas (cambio, reembolso, etc.)</li>
+        </ul>
+
+        <h2>Formulario de Reclamación Digital</h2>
+        <div class="form-section">
+            <form id="reclamacionForm">
+                <label for="nombre">Nombre Completo *</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="ordenCompra">Número de Orden de Compra *</label>
+                <input type="text" id="ordenCompra" name="ordenCompra" required>
+
+                <label for="fechaCompra">Fecha de Compra *</label>
+                <input type="date" id="fechaCompra" name="fechaCompra" required>
+
+                <label for="producto">Producto Afectado *</label>
+                <input type="text" id="producto" name="producto" required>
+
+                <label for="tipoReclamacion">Tipo de Reclamación *</label>
+                <select id="tipoReclamacion" name="tipoReclamacion" required>
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="Producto Defectuoso">Producto Defectuoso</option>
+                    <option value="Incumplimiento de Entrega">Incumplimiento de Entrega</option>
+                    <option value="Producto No Coincide">Producto No Coincide con Descripción</option>
+                    <option value="Error en Pedido">Error en Pedido</option>
+                    <option value="Problema de Garantía">Problema de Garantía</option>
+                    <option value="Mal Trato">Mal Trato del Personal</option>
+                    <option value="Problema con Envío">Problema con Envío</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <label for="descripcion">Descripción Detallada de la Reclamación *</label>
+                <textarea id="descripcion" name="descripcion" rows="6" required placeholder="Cuéntanos exactamente qué salió mal..."></textarea>
+
+                <label for="solucion">Solución Solicitada *</label>
+                <select id="solucion" name="solucion" required>
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="Cambio por Producto Nuevo">Cambio por Producto Nuevo</option>
+                    <option value="Reembolso Total">Reembolso Total</option>
+                    <option value="Reembolso Parcial">Reembolso Parcial</option>
+                    <option value="Reparación">Reparación</option>
+                    <option value="Aclaración del Problema">Aclaración del Problema</option>
+                </select>
+
+                <label for="evidencia">Adjuntar Evidencia (opcional - descripción de fotos)</label>
+                <textarea id="evidencia" name="evidencia" rows="3" placeholder="Describe qualquier foto o evidencia que envíes por email..."></textarea>
+
+                <label>
+                    <input type="checkbox" required>
+                    Autorizo que BeeTec contacte conmigo para resolver esta reclamación
+                </label>
+
+                <button type="submit">Registrar Reclamación</button>
+            </form>
+        </div>
+
+        <h2>Proceso de Resolución</h2>
+        <ol>
+            <li><strong>Registro:</strong> Tu reclamación se registra en nuestro sistema inmediatamente</li>
+            <li><strong>Verificación:</strong> Revisamos los detalles y recopilamos información relevante (24-48 horas)</li>
+            <li><strong>Evaluación:</strong> Analizamos tu caso conforme a nuestros términos y la ley (3-5 días hábiles)</li>
+            <li><strong>Respuesta:</strong> Te contactamos con nuestra resolución (máximo 30 días hábiles)</li>
+            <li><strong>Solución:</strong> Implementamos la solución acordada</li>
+        </ol>
+
+        <h2>Plazos de Respuesta</h2>
+        <ul>
+            <li><strong>Acuse de recibo:</strong> 2 días hábiles</li>
+            <li><strong>Investigación:</strong> Máximo 10 días hábiles</li>
+            <li><strong>Resolución final:</strong> Máximo 30 días hábiles</li>
+        </ul>
+
+        <h2>Derechos del Consumidor</h2>
+        <p>Como consumidor tienes derecho a:</p>
+        <ul>
+            <li>Recibir información clara y veraz sobre productos y precios</li>
+            <li>No ser discriminado en acceso a bienes y servicios</li>
+            <li>Presentar reclamaciones y reclamos sin costo</li>
+            <li>Recibir respuesta en plazos establecidos por ley</li>
+            <li>Iniciar acciones administrativas ante INDECOPI</li>
+            <li>Iniciar acciones judiciales para cobro de daños</li>
+        </ul>
+
+        <h2>Escalamiento a INDECOPI</h2>
+        <p>
+            Si no estás satisfecho con la solución de BeeTec, puedes escalear tu caso ante INDECOPI (Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual):
+        </p>
+        <ul>
+            <li><strong>Sitio Web:</strong> <a href="https://www.indecopi.gob.pe" target="_blank">www.indecopi.gob.pe</a></li>
+            <li><strong>Teléfono:</strong> 224-7800 (Lima) o 01-224-7800 (Provincias)</li>
+            <li><strong>Correo:</strong> sisnormativos@indecopi.gob.pe</li>
+        </ul>
+
+        <h2>Confidencialidad</h2>
+        <p>
+            Todas las reclamaciones se tratan con confidencialidad. La identidad del reclamante y los detalles de la reclama­ción se protegen conforme a nuestras políticas de privacidad y la ley.
+        </p>
+
+        <h2>Contacto</h2>
+        <p>
+            Para más información sobre reclamaciones:
+        </p>
+        <ul>
+            <li>Email: <strong>murdaneguigago@gmail.com</strong></li>
+            <li>Teléfono: <strong>+51 903 232 658</strong></li>
+            <li>Horario: Lunes a Domingo 9:00 AM - 6:00 PM</li>
+        </ul>
+
+        <p style="text-align: center; margin-top: 40px; color: #666; font-size: 0.9rem;">
+            © 2026 BeeTec - Todos los derechos reservados<br>
+            En cumplimiento con la Ley de Protección al Consumidor Nº 29571
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('reclamacionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = new FormData(this);
+            const body = new FormData();
+            body.append('subject', `RECLAMACIÓN - ${data.get('nombre')} - ${data.get('ordenCompra')}`);
+            body.append('nombre', data.get('nombre'));
+            body.append('email', data.get('email'));
+            body.append('telefono', data.get('telefono'));
+            body.append('ordenCompra', data.get('ordenCompra'));
+            body.append('fechaCompra', data.get('fechaCompra'));
+            body.append('producto', data.get('producto'));
+            body.append('tipoReclamacion', data.get('tipoReclamacion'));
+            body.append('descripcion', data.get('descripcion'));
+            body.append('solucion', data.get('solucion'));
+            body.append('evidencia', data.get('evidencia'));
+            
+            fetch('https://formspree.io/f/murdaneguigago@gmail.com', {
+                method: 'POST',
+                body: body,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Reclamación registrada correctamente. Recibirás respuesta en máximo 30 días hábiles. Número de seguimiento enviado a tu email.');
+                    this.reset();
+                } else {
+                    alert('Error al registrar la reclamación. Por favor, intenta nuevamente o envía un email a murdaneguigago@gmail.com');
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error);
+            });
+        });
+    </script>
+</body>
+</html>

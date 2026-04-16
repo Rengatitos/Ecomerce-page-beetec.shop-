@@ -32,6 +32,7 @@ export default function Navigation() {
           <li><a href="#home" onClick={closeMenu}>Inicio</a></li>
           <li><a href="#catalog" onClick={closeMenu}>Catálogo</a></li>
           <li><a href="#reviews" onClick={closeMenu}>Comentarios</a></li>
+          <li><a href="#contact" onClick={closeMenu}>Contacto</a></li>
         </ul>
         <div className="nav-actions">
           <button className="cart-icon">
@@ -41,7 +42,7 @@ export default function Navigation() {
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
           </button>
-          <button className="hamburger-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <span></span>
             <span></span>
             <span></span>
