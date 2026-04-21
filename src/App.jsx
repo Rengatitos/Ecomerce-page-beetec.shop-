@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import AnnouncementBar from './components/AnnouncementBar';
 import Navigation from './components/Navigation';
@@ -6,39 +7,42 @@ import Catalog from './components/Catalog';
 import Reviews from './components/Reviews';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ProductModal from './components/ProductModal';
+import ProductPage from './components/ProductPage';
+import Cart from './components/Cart';
+import Checkout from './components/Checkout';
+
+function HomePage({ onViewDetails }) {
+  return (
+    <>
+      <Hero />
+      <Catalog onViewDetails={onViewDetails} />
+      <Reviews />
+      <Contact />
+    </>
+  );
+}
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleViewDetails = (product) => {
     setSelectedProduct(product);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setTimeout(() => setSelectedProduct(null), 300);
   };
 
   return (
-    <>
+    <BrowserRouter>
       <AnnouncementBar />
       <Navigation />
       <main>
-        <Hero />
-        <Catalog onViewDetails={handleViewDetails} />
+        <Routes>
+          <Route path="/" element={<HomePage onViewDetails={handleViewDetails} />} />
+          <Route path="/product/:productId" element={<ProductPage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
       </main>
-      <Reviews />
-      <Contact />
       <Footer />
-      <ProductModal 
-        product={selectedProduct}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
-    </>
+    </BrowserRouter>
   );
 }
 

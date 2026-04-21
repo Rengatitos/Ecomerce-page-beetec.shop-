@@ -3,8 +3,7 @@ export const products = [
         id: 1,
         nombre: "Máquina Portátil de Café Espresso 3 en 1",
         precio: 199,
-        imagen: "cafeport.png",
-        video: "videocafe.mp4",
+        imagen: "productosMuestra/cafetera.webp",
         categoria: "tendencias",
         descripcion: "Máquina portátil de café espresso con 20 bares de presión, batería 7800 mAh. Ideal para viajes.",
         caracteristicas: [
@@ -34,8 +33,7 @@ export const products = [
         id: 2,
         nombre: "Máquina Multifunción de Leche Vegetal",
         precio: 199,
-        imagen: "lechemaq.png",
-        video: "videoleche.mp4",
+        imagen: "productosMuestra/leche.webp",
         categoria: "tendencias",
         descripcion: "Máquina automática que prepara leches vegetales, cremas, papillas y batidos. Cocina y licúa al mismo tiempo.",
         caracteristicas: [
@@ -59,240 +57,198 @@ export const products = [
             "Sostenible - Reduce envases",
             "Reutiliza pulpa (Okara)"
         ],
-        incluye: []
+        incluye: ["Recetario digital de leche vegetal"]
     },
     {
         id: 3,
-        nombre: "Alfombra de Conexión a Tierra",
+        nombre: "Alfombra de Conexión a Tierra (Earthing Mat)",
         precio: 169,
-        imagen: "producto3.webp",
-        video: "producto3.webp",
+        imagen: "productosMuestra/alfombra.webp",
         categoria: "bienestar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
+        descripcion: "Alfombra conductora diseñada para conectar tu cuerpo con la energía natural de la Tierra, reduciendo el estrés oxidativo.",
+        caracteristicas: [
+            "Material conductor de alta calidad",
+            "Conexión directa a toma de tierra",
+            "Superficie antideslizante",
+            "Fácil de limpiar"
+        ],
+        especificaciones: {
+            "Tipo": "Earthing / Grounding Mat",
+            "Uso": "Pies descalzos o manos",
+            "Conexión": "Cable de tierra incluido",
+            "Beneficio principal": "Equilibrio bioeléctrico"
+        },
+        beneficios: [
+            "Reduce la inflamación y el dolor",
+            "Mejora la calidad del sueño",
+            "Neutraliza cargas electroestáticas",
+            "Aumenta la energía y reduce el estrés"
+        ],
+        incluye: ["Cable de conexión a tierra"]
     },
     {
         id: 4,
-        nombre: "Cámara Fotográfica Digital para Niños con Impresión Instantánea",
-        precio: 129,
-        imagen: "producto4.png",
-        video: "producto4.mp4",
+        nombre: "Combo Creativo: Mini Cámara Digital para Niños",
+        precio: 169,
+        imagen: "productosMuestra/camara.png",
         categoria: "infantil",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
+        descripcion: "Cámara digital que permite capturar fotos y videos con impresión térmica instantánea. Despierta la creatividad de los más pequeños.",
+        caracteristicas: [
+            "Impresión térmica (sin tinta)",
+            "Captura de fotos y videos",
+            "Diseño ergonómico y resistente",
+            "Interfaz amigable para niños"
+        ],
+        especificaciones: {
+            "Funciones": "Foto, Video, Impresión",
+            "Papel": "Térmico estándar",
+            "Pantalla": "LCD a color",
+            "Edad recomendada": "3+ años"
+        },
+        beneficios: [
+            "Diversión sin límites y recuerdos mágicos",
+            "No requiere cartuchos de tinta costosos",
+            "Fomenta la expresión artística",
+            "Fotos listas para colorear"
+        ],
+        incluye: [
+            "Set de 12 plumones de colores",
+            "2 Rollos de papel térmico",
+            "Ebook para colorear en PDF",
+            "Envío gratis"
+        ]
     },
     {
         id: 5,
         nombre: "Combo Sonrisa Smart",
         precio: 99,
-        imagen: "producto5.png",
-        video: "producto5.mp4",
+        imagen: "productosMuestra/cepillo.webp",
         categoria: "salud",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 6,
-        nombre: "Combo Abrigo Total",
-        precio: 109,
-        imagen: "producto6.png",
-        video: "producto6.mp4",
-        categoria: "bienestar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 7,
-        nombre: "Combo Amor Peludo",
-        precio: 79,
-        imagen: "producto7.png",
-        video: "producto7.mp4",
-        categoria: "mascotas",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
+        descripcion: "Sistema de higiene dental avanzado que incluye esterilización UV para mantener tus cepillos libres de bacterias.",
+        caracteristicas: [
+            "Esterilizador con tecnología UV",
+            "Cepillado de alta frecuencia",
+            "Diseño elegante y minimalista",
+            "Instalación sencilla"
+        ],
+        especificaciones: {
+            "Tipo de luz": "UV Germicida",
+            "Modos de cepillo": "Múltiples intensidades",
+            "Carga": "USB",
+            "Capacidad": "Hasta 4 cepillos"
+        },
+        beneficios: [
+            "Elimina hasta el 99% de gérmenes",
+            "Limpieza profunda y saludable",
+            "Organización automática del baño",
+            "Mayor durabilidad de las cerdas"
+        ],
+        incluye: [
+            "Esterilizador de cepillos UV",
+            "Cepillo de dientes eléctrico de regalo"
+        ]
     },
     {
         id: 8,
         nombre: "Combo Seca Fácil",
         precio: 129,
-        imagen: "producto8.png",
-        video: "producto8.mp4",
+        imagen: "productosMuestra/secadora.webp",
         categoria: "hogar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 9,
-        nombre: "Globos de Hielo Relajantes",
-        precio: 25,
-        imagen: "producto9.png",
-        video: "producto9.mp4",
-        categoria: "bienestar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 10,
-        nombre: "Gotas contras el mal aliento X2",
-        precio: 59,
-        imagen: "producto10.png",
-        video: "producto10.mp4",
-        categoria: "salud",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 11,
-        nombre: "Juguete Inteligente para Perros",
-        precio: 34.95,
-        imagen: "producto11.png",
-        video: "producto11.mp4",
-        categoria: "mascotas",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 12,
-        nombre: "Kit Sonrisa Saludable",
-        precio: 149,
-        imagen: "producto12.png",
-        video: "producto12.mp4",
-        categoria: "salud",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
+        descripcion: "Secadora de ropa plegable y portátil que seca tus prendas en minutos, ideal para departamentos pequeños y viajes.",
+        caracteristicas: [
+            "Diseño plegable ahorra espacio",
+            "Secado rápido en minutos",
+            "Sistema de aire caliente uniforme",
+            "Fácil de transportar"
+        ],
+        especificaciones: {
+            "Tipo": "Secadora de aire portátil",
+            "Instalación": "No requiere",
+            "Uso": "Interior / Viajes",
+            "Cuidado": "Apto para prendas delicadas"
+        },
+        beneficios: [
+            "Ropa seca y lista para usar en cualquier momento",
+            "Organización sin esfuerzo",
+            "Evita la humedad y malos olores en interiores",
+            "Ideal para climas húmedos o invierno"
+        ],
+        incluye: ["Colgador multifuncional plegable de regalo"]
     },
     {
         id: 13,
-        nombre: "Calefactor Portátil",
-        precio: 50,
-        imagen: "producto13.png",
-        video: "producto13.mp4",
+        nombre: "Combo Abrigo Total: Calefactor Portátil",
+        precio: 109,
+        imagen: "productosMuestra/calentador.webp",
         categoria: "hogar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 14,
-        nombre: "Maceta Inteligente con Sensores",
-        precio: 320,
-        imagen: "producto14.png",
-        video: "producto14.mp4",
-        categoria: "hogar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
+        descripcion: "Calefactor de bajo consumo con tecnología cerámica, ideal para calentar espacios personales de forma rápida y segura.",
+        caracteristicas: [
+            "Potencia de 500 Watts",
+            "Pantalla digital de temperatura",
+            "Temporizador programable",
+            "Conexión directa a la pared"
+        ],
+        especificaciones: {
+            "Potencia": "500W",
+            "Tecnología": "Cerámica PTC",
+            "Rango de temp": "15°C - 32°C",
+            "Seguridad": "Apagado automático por sobrecalentamiento"
+        },
+        beneficios: [
+            "Calor instantáneo para el frío",
+            "Ahorro de energía frente a estufas grandes",
+            "Silencioso y compacto",
+            "Fácil de llevar a la oficina o habitación"
+        ],
+        incluye: [
+            "Gorro de invierno de regalo",
+            "Cuellera térmica de regalo"
+        ]
     },
     {
         id: 15,
-        nombre: "Mini Refrigerador Para tu Rutina de Skin Care",
+        nombre: "Mini Refrigerador Skin Care con Espejo LED",
         precio: 209,
-        imagen: "producto15.png",
-        video: "producto15.mp4",
+        imagen: "productosMuestra/minirefri.webp",
         categoria: "tendencias",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 16,
-        nombre: "Pack de 5 unidades de rollos termicos",
-        precio: 20,
-        imagen: "producto16.png",
-        video: "producto16.mp4",
-        categoria: "hogar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 17,
-        nombre: "Tapete calentador de Alimentos",
-        precio: 149,
-        imagen: "producto17.png",
-        video: "producto17.mp4",
-        categoria: "hogar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 18,
-        nombre: "Tapete de Baño de Piedra Absorbente",
-        precio: 89,
-        imagen: "producto18.png",
-        video: "producto18.mp4",
-        categoria: "hogar",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 19,
-        nombre: "Teclado Plegable Inalámbrico",
-        precio: 109,
-        imagen: "producto19.png",
-        video: "producto19.mp4",
-        categoria: "tecnologia",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
-    },
-    {
-        id: 20,
-        nombre: "Traductor Inteligente Portátil Pro",
-        precio: 109,
-        imagen: "producto20.png",
-        video: "producto20.mp4",
-        categoria: "tecnologia",
-        descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        caracteristicas: ["Lorem ipsum", "Dolor sit amet", "Consectetur adipiscing"],
-        especificaciones: {},
-        beneficios: ["Lorem ipsum dolor"],
-        incluye: []
+        descripcion: "Refrigerador compacto diseñado para conservar productos cosméticos, mejorando su eficacia y brindando una sensación refrescante.",
+        caracteristicas: [
+            "Puerta con espejo y luz LED integrada",
+            "Sistema de enfriamiento silencioso",
+            "Tamaño compacto para tocador",
+            "Estantes internos removibles"
+        ],
+        especificaciones: {
+            "Uso": "Skin care / Cosméticos",
+            "Luz": "LED regulable",
+            "Color": "Rosado pastel",
+            "Voltaje": "Dual (AC/DC)"
+        },
+        beneficios: [
+            "Prolonga la vida útil de tus cremas y serums",
+            "Efecto descongestionante en la piel",
+            "Mantiene activos como la Vitamina C estables",
+            "Estética premium para tu rutina diaria"
+        ],
+        incluye: [
+            "Dos Ice Globes de regalo (Rosado o Celeste)"
+        ]
     }
 ];
+
+// Mapeo de imágenes de productos por ID
+export const productImages = {
+    1: "images/productosMuestra/cafetera.webp",
+    2: "images/productosMuestra/leche.webp",
+    3: "images/productosMuestra/alfombra.webp",
+    4: "images/productosMuestra/camara.png",
+    5: "images/productosMuestra/cepillo.webp",
+    8: "images/productosMuestra/secadora.webp",
+    13: "images/productosMuestra/calentador.webp",
+    15: "images/productosMuestra/minirefri.webp"
+};
+
+// Función helper para obtener la imagen correcta de un producto
+export const getProductImage = (productId) => {
+    return `/${productImages[productId] || ''}`;
+};
