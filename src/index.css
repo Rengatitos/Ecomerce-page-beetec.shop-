@@ -51,9 +51,12 @@ a { text-decoration: none; color: inherit; }
     padding: 10px 0;
     font-weight: 600;
     font-size: 0.85rem;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1001;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2001;
     overflow: hidden;
 }
 
@@ -75,13 +78,17 @@ a { text-decoration: none; color: inherit; }
 /* Navigation */
 #main-nav {
     padding: 16px 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    z-index: 1000;
+    height: 70px;
+    top: 40px;
+    z-index: 2000;
     transition: var(--transition);
     background: rgba(255, 251, 240, 0.5);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    display: flex;
+    align-items: center;
 }
 
 #main-nav::after {
@@ -97,17 +104,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 #main-nav.scrolled {
-    position: fixed;
-    top: 40px;
     background: rgba(255, 253, 245, 0.94);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 215, 0, 0.15);
-    padding: 12px 0;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-}
-
-#main-nav.scrolled::after {
-    display: none;
+    padding: 16px 0;
 }
 
 .nav-container {
@@ -245,8 +246,8 @@ a { text-decoration: none; color: inherit; }
 
 /* Hero Section */
 .hero {
-    margin-top: 100px;
-    padding: 80px 0 100px 0;
+    margin-top: 0;
+    padding: 150px 0 100px 0;
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, rgba(255, 215, 0, 0.01) 50%, transparent 100%);
     position: relative;
     z-index: 1;
@@ -1614,7 +1615,7 @@ a { text-decoration: none; color: inherit; }
     /* Hero Section */
     .hero {
         margin-top: 70px;
-        padding: 40px 0;
+        padding: 80px 0 40px 0;
     }
 
     .hero-content h1 {

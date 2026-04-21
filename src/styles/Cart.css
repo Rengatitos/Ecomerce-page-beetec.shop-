@@ -1,6 +1,6 @@
 .cart-container {
   min-height: calc(100vh - 400px);
-  padding: 40px 20px;
+  padding: 110px 20px 40px 20px;
   background-color: #fafafa;
 }
 
