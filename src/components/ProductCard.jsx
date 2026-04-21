@@ -1,6 +1,15 @@
+import { useNavigate } from 'react-router-dom';
+
 export default function ProductCard({ product, onViewDetails }) {
+  const navigate = useNavigate();
+
+  const handleViewDetails = (e) => {
+    e.stopPropagation();
+    navigate(`/product/${product.id}`);
+  };
+
   return (
-    <div className="product-card" onClick={() => onViewDetails(product)}>
+    <div className="product-card" onClick={handleViewDetails}>
       <div className="product-image">
         <img src={`/images/${product.imagen}`} alt={product.nombre} />
       </div>
@@ -9,10 +18,7 @@ export default function ProductCard({ product, onViewDetails }) {
         <p className="product-description">{product.descripcion}</p>
         <div className="product-footer">
           <span className="product-price">S/.{product.precio}</span>
-          <button className="product-btn" onClick={(e) => {
-            e.stopPropagation();
-            onViewDetails(product);
-          }}>
+          <button className="product-btn" onClick={handleViewDetails}>
             Ver
           </button>
         </div>
