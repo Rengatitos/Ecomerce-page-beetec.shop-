@@ -40,34 +40,6 @@ body {
 li { list-style: none; }
 a { text-decoration: none; color: inherit; }
 
-/* Announcement Bar */
-.announcement-bar {
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 10px 0;
-    font-weight: 600;
-    font-size: 0.85rem;
-    position: sticky;
-    top: 0;
-    z-index: 1001;
-    overflow: hidden;
-}
-
-.scrolling-text {
-    display: flex;
-    white-space: nowrap;
-    animation: scroll 20s linear infinite;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.scrolling-text span {
-    padding: 0 40px;
-}
-
 /* Navigation */
 #main-nav {
     padding: 25px 0;

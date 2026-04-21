@@ -197,6 +197,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .main-swiper-wrapper {
+    height: 380px;
+  }
+
   .swiper-button-prev,
   .swiper-button-next {
     width: 40px;
@@ -222,5 +226,26 @@
 
   .thumbnail-image {
     height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-swiper-wrapper {
+    height: 320px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .product-thumbnails {
+    padding: 8px;
+  }
+
+  .thumbnail-image {
+    height: 50px;
   }
 }
