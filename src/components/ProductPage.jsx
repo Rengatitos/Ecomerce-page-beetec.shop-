@@ -81,12 +81,14 @@ export default function ProductPage() {
         <span>{product.nombre}</span>
       </div>
 
-      {/* Main Content */}
+      {/* Main Content - 2 Column Layout */}
       <div className="product-main-content">
+        {/* Left: Gallery */}
         <div className="product-gallery-section">
           <ProductGallery productId={product.id} />
         </div>
 
+        {/* Right: All Information */}
         <div className="product-details-section">
           {/* Header */}
           <div className="product-header">
@@ -94,6 +96,24 @@ export default function ProductPage() {
             <h1>{product.nombre}</h1>
             <p className="product-description-main">{product.descripcion}</p>
           </div>
+
+          {/* Color & Stock Info */}
+          {(product.color || product.stock) && (
+            <div className="product-quick-info">
+              {product.color && (
+                <div className="info-item">
+                  <span className="info-label">Color:</span>
+                  <span className="info-value">{product.color}</span>
+                </div>
+              )}
+              {product.stock && (
+                <div className="info-item">
+                  <span className="info-label">Stock:</span>
+                  <span className="info-value">{product.stock}</span>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Price Section */}
           <div className="product-price-section">
@@ -128,6 +148,33 @@ export default function ProductPage() {
             </button>
           </div>
 
+          {/* Models */}
+          {product.modelos && product.modelos.length > 0 && (
+            <div className="product-section">
+              <h3>Modelos</h3>
+              <ul className="models-list">
+                {product.modelos.map((modelo, idx) => (
+                  <li key={idx}>{modelo}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Especificaciones */}
+          {product.especificaciones && Object.keys(product.especificaciones).length > 0 && (
+            <div className="product-section">
+              <h3>Especificaciones Técnicas</h3>
+              <div className="specifications-list">
+                {Object.entries(product.especificaciones).map(([key, value], idx) => (
+                  <div key={idx} className="spec-item-row">
+                    <span className="spec-label-row">{key}</span>
+                    <span className="spec-value-row">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Features */}
           {product.caracteristicas && product.caracteristicas.length > 0 && (
             <div className="product-section">
@@ -142,55 +189,37 @@ export default function ProductPage() {
               </ul>
             </div>
           )}
+
+          {/* Beneficios */}
+          {product.beneficios && product.beneficios.length > 0 && (
+            <div className="product-section">
+              <h3>Beneficios</h3>
+              <ul className="benefits-list">
+                {product.beneficios.map((benefit, idx) => (
+                  <li key={idx}>
+                    <span className="benefit-icon">★</span>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Incluye */}
+          {product.incluye && product.incluye.length > 0 && (
+            <div className="product-section">
+              <h3>Lo que Incluye</h3>
+              <div className="includes-list">
+                {product.incluye.map((item, idx) => (
+                  <div key={idx} className="include-item">
+                    <span className="include-icon">📦</span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-
-      {/* Additional Sections */}
-      <div className="product-additional">
-        {/* Especificaciones */}
-        {product.especificaciones && Object.keys(product.especificaciones).length > 0 && (
-          <div className="product-section full-width">
-            <h3>Especificaciones Técnicas</h3>
-            <div className="specifications-grid">
-              {Object.entries(product.especificaciones).map(([key, value], idx) => (
-                <div key={idx} className="spec-item">
-                  <span className="spec-label">{key}</span>
-                  <span className="spec-value">{value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Beneficios */}
-        {product.beneficios && product.beneficios.length > 0 && (
-          <div className="product-section full-width">
-            <h3>Beneficios</h3>
-            <ul className="benefits-list">
-              {product.beneficios.map((benefit, idx) => (
-                <li key={idx}>
-                  <span className="benefit-icon">★</span>
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Incluye */}
-        {product.incluye && product.incluye.length > 0 && (
-          <div className="product-section full-width">
-            <h3>Lo que Incluye</h3>
-            <div className="includes-list">
-              {product.incluye.map((item, idx) => (
-                <div key={idx} className="include-item">
-                  <span className="include-icon">📦</span>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Related Products */}

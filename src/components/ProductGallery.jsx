@@ -1,16 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Thumbs, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/thumbs';
 import '../styles/ProductGallery.css';
 
 export default function ProductGallery({ productId }) {
   const [images, setImages] = useState([]);
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   // Mapeo de IDs de productos a carpetas
   const productFolders = {
@@ -77,72 +71,38 @@ export default function ProductGallery({ productId }) {
   if (loading) return <div className="gallery-loading">Cargando imágenes...</div>;
   if (images.length === 0) return <div className="gallery-empty">No hay imágenes disponibles</div>;
 
+  const currentImage = images[selectedIndex];
+
   return (
     <div className="product-gallery-container">
-      <div className="main-swiper-wrapper">
-        <Swiper
-          modules={[Navigation, Pagination, Thumbs, Autoplay]}
-          spaceBetween={10}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          pagination={{
-            el: '.swiper-pagination',
-            clickable: true,
-            dynamicBullets: true,
-          }}
-          thumbs={{ swiper: thumbsSwiper }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          className="product-main-swiper"
-        >
-          {images.map((image, index) => (
-            <SwiperSlide key={index}>
-              <div className="slide-content">
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  onError={(e) => { e.target.src = '/images/placeholder.webp'; }}
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
-        <div className="swiper-pagination"></div>
+      {/* Imagen Principal Grande */}
+      <div className="gallery-main-image">
+        <img 
+          src={currentImage.src} 
+          alt={currentImage.alt}
+          onError={(e) => { e.target.src = '/images/placeholder.webp'; }}
+        />
       </div>
 
-      {/* Thumbnails solo con imágenes */}
-      <Swiper
-        modules={[Thumbs]}
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={5}
-        freeMode
-        watchSlidesProgress
-        className="product-thumbnails"
-        breakpoints={{
-          320: { slidesPerView: 3 },
-          640: { slidesPerView: 4 },
-          1024: { slidesPerView: 5 },
-        }}
-      >
-        {images.map((image, index) => (
-          <SwiperSlide key={index} className="thumbnail-slide">
-            <img 
-              src={image.src} 
-              alt={`Thumbnail ${index + 1}`}
-              className="thumbnail-image"
-              onError={(e) => { e.target.src = '/images/placeholder.webp'; }}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {/* Thumbnails de Navegación */}
+      {images.length > 1 && (
+        <div className="gallery-thumbnails">
+          {images.map((image, index) => (
+            <div 
+              key={index}
+              className={`gallery-thumbnail ${index === selectedIndex ? 'active' : ''}`}
+              onClick={() => setSelectedIndex(index)}
+            >
+              <img 
+                src={image.src} 
+                alt={`Thumbnail ${index + 1}`}
+                onError={(e) => { e.target.src = '/images/placeholder.webp'; }}
+              />
+              <span className="thumbnail-number">{index + 1}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
