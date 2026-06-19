@@ -68,23 +68,64 @@ export default function ProductGallery({ productId }) {
     loadImages();
   }, [productId]);
 
+  // Navegación con teclado
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'ArrowLeft') {
+        setSelectedIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+      } else if (e.key === 'ArrowRight') {
+        setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [images.length]);
+
   if (loading) return <div className="gallery-loading">Cargando imágenes...</div>;
   if (images.length === 0) return <div className="gallery-empty">No hay imágenes disponibles</div>;
 
   const currentImage = images[selectedIndex];
 
+  // Controles de navegación para carrusel
+  const handlePrevImage = () => {
+    setSelectedIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+  };
+
+  const handleNextImage = () => {
+    setSelectedIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+  };
+
   return (
     <div className="product-gallery-container">
-      {/* Imagen Principal Grande */}
+      {/* Imagen Principal Grande - Carrusel */}
       <div className="gallery-main-image">
-        <img 
-          src={currentImage.src} 
-          alt={currentImage.alt}
-          onError={(e) => { e.target.src = '/images/placeholder.webp'; }}
-        />
+        <button className="gallery-nav-btn gallery-nav-prev" onClick={handlePrevImage} aria-label="Imagen anterior">
+          ❮
+        </button>
+        
+        {/* Contenedor de imagen con overflow hidden */}
+        <div className="gallery-image-wrapper">
+          <img 
+            src={currentImage.src} 
+            alt={currentImage.alt}
+            onError={(e) => { e.target.src = '/images/placeholder.webp'; }}
+          />
+        </div>
+        
+        <button className="gallery-nav-btn gallery-nav-next" onClick={handleNextImage} aria-label="Imagen siguiente">
+          ❯
+        </button>
+
+        {/* Indicador de página */}
+        {images.length > 1 && (
+          <div className="gallery-counter">
+            {selectedIndex + 1} / {images.length}
+          </div>
+        )}
       </div>
 
-      {/* Thumbnails de Navegación */}
+      {/* Thumbnails de Navegación - Responsive */}
       {images.length > 1 && (
         <div className="gallery-thumbnails">
           {images.map((image, index) => (
@@ -92,6 +133,7 @@ export default function ProductGallery({ productId }) {
               key={index}
               className={`gallery-thumbnail ${index === selectedIndex ? 'active' : ''}`}
               onClick={() => setSelectedIndex(index)}
+              title={`Ver imagen ${index + 1}`}
             >
               <img 
                 src={image.src} 

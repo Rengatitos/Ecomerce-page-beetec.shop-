@@ -2,6 +2,8 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { products, getProductImage } from '../data/products';
 import ProductGallery from './ProductGallery';
+import ProductReviews from './ProductReviews';
+import ChatBot from './ChatBot';
 import Toast from './Toast';
 import '../styles/ProductPage.css';
 
@@ -71,6 +73,9 @@ export default function ProductPage() {
   return (
     <div className="product-page">
       <Toast message={toastMessage} />
+      
+      {/* ChatBot Flotante */}
+      <ChatBot product={product} />
       
       {/* Navigation */}
       <div className="product-breadcrumb">
@@ -221,6 +226,9 @@ export default function ProductPage() {
           )}
         </div>
       </div>
+
+      {/* Comentarios de Clientes */}
+      <ProductReviews productId={product.id} />
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
