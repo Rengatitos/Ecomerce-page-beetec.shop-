@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import '../styles/ChatBot.css';
 
-const WHATSAPP_NUMBER = "51903232658";
+const WHATSAPP_NUMBER = "51919477248";
 
 const PRODUCTOS = {
   cafetera: {
     id: 'cafetera',
     nombre: 'Máquina de Café Portátil 3 en 1',
     precio: 199,
-    stock: true
+    stock: false
   },
   alfombra: {
     id: 'alfombra',
@@ -16,6 +16,29 @@ const PRODUCTOS = {
     precio: 149,
     stock: true
   },
+  // nuevos productos
+  grifocalentador: {
+    id: 'grifocalentador',
+    nombre: 'Grifo Calentador Instantáneo de Agua 3000W',
+    precio: 89,
+    stock: true
+  },
+  
+  masajeador: {
+    id: 'masajeador',
+    nombre: 'Masajeador Eléctrico de Percusión Portátil', 
+    precio: 119,
+    stock: true
+  },
+
+  extractorMama: {
+    id: 'extractorMama',
+    nombre: 'Extractor de Leche Eléctrico Portátil',
+    precio: 119,
+    stock: true
+  },
+
+
   leche: {
     id: 'leche',
     nombre: 'Máquina Multifunción de Leche Vegetal',
@@ -636,13 +659,24 @@ Quiero reservar este producto para la próxima vez que haya stock. 📦`;
         title="Chat de ventas"
         type="button"
       >
-        💬
+        <img
+  src="https://img.freepik.com/vector-premium/whatsapp-logo-iconic-speech-bubble-and-phone-symbol-on-green_678821-509.jpg?semt=ais_hybrid&w=740&q=80"
+  alt="WhatsApp"
+  style={{
+    width:"40px",
+    height:"40px",
+    borderRadius:"50%"
+  }}
+/>
       </button>
 
       {isOpen && (
         <div className="chatbot-window">
           <div className="chatbot-header">
             <h3>Asesor de Ventas</h3>
+            <div className="chatbot-status">
+            🟢 En línea
+           </div>
             <button 
               className="close-btn" 
               onClick={() => setIsOpen(false)}

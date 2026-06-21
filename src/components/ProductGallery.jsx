@@ -15,7 +15,11 @@ export default function ProductGallery({ productId }) {
     5: 'cepillo',
     8: 'secadora',
     13: 'calentador',
-    15: 'miniRefri'
+    15: 'miniRefri',
+    // Nuevos productos
+    16: 'grifocalentador',
+    17: 'masajeador',
+    18: 'extractorMama'
   };
 
   useEffect(() => {
