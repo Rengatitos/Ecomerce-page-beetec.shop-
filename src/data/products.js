@@ -1,5 +1,127 @@
 export const products = [
     {
+        id: 16,
+        nombre: "Grifo Calentador Instantáneo de Agua",
+        precio: 89,
+        imagen: "productosMuestra/grifocalentador.webp",
+        categoria: "hogar",
+        descripcion: "Grifo calentador eléctrico instantáneo que proporciona agua caliente en 3 a 5 segundos sin necesidad de terma ni precalentamiento. Ideal para cocina o lavadero.",
+        caracteristicas: [
+            "Calentamiento rápido en 3 a 5 segundos",
+            "Pantalla LED de temperatura",
+            "Temperatura ajustable entre 30°C y 60°C",
+            "Protección contra fugas eléctricas",
+            "Funciona con agua fría y caliente",
+            "No requiere almacenamiento ni precalentamiento",
+            "Fácil instalación"
+        ],
+        especificaciones: {
+            "Tipo": "Grifo calentador instantáneo eléctrico",
+            "Potencia": "3000 W",
+            "Voltaje": "220 V",
+            "Temperatura": "30°C - 60°C",
+            "Protección": "IPX4",
+            "Presión de agua": "0.04 - 0.5 MPa",
+            "Material": "ABS y acero inoxidable",
+            "Longitud del cable": "90 cm"
+        },
+        beneficios: [
+            "Agua caliente al instante",
+            "Ahorra agua y energía",
+            "No necesita terma",
+            "Seguro gracias a la protección contra fugas",
+            "Ideal para cocina y lavadero",
+            "Uso sencillo y eficiente"
+        ],
+        incluye: [
+            "Grifo calentador instantáneo",
+            "Cable de alimentación integrado"
+        ]
+    },
+    {
+        id: 17,
+        nombre: "Masajeador de Cuello y Hombros 4D con Calor",
+        precio: 119,
+        imagen: "productosMuestra/masajeador.webp",
+        categoria: "bienestar",
+        descripcion: "Masajeador ergonómico 4D con calor terapéutico que simula el movimiento de manos humanas para aliviar la tensión en cuello, hombros, espalda y trapecios.",
+        caracteristicas: [
+            "Tecnología 4D de amasamiento profundo",
+            "Sistema biónico que imita manos humanas",
+            "10 puntos de contacto",
+            "2 niveles de calor terapéutico",
+            "3 niveles de intensidad",
+            "Diseño ergonómico",
+            "Uso en múltiples zonas del cuerpo",
+            "Batería recargable USB Tipo-C"
+        ],
+        especificaciones: {
+            "Tipo": "Masajeador 4D de cuello y hombros",
+            "Temperatura baja": "40°C",
+            "Temperatura alta": "45°C",
+            "Niveles de intensidad": "3",
+            "Batería": "2000 mAh",
+            "Peso": "0.7 kg",
+            "Carga": "USB Tipo-C (5V / 2A - 10W)",
+            "Material": "Silicona grado alimenticio y acabado tipo cuero"
+        },
+        beneficios: [
+            "Alivia la tensión muscular",
+            "Reduce la rigidez y la fatiga",
+            "Favorece la relajación diaria",
+            "Masaje profundo similar a manos humanas",
+            "Ideal para personas que trabajan sentadas",
+            "Puede utilizarse en cuello, espalda, piernas y zona lumbar"
+        ],
+        incluye: [
+            "Masajeador de cuello y hombros",
+            "Cable de carga Tipo-C",
+            "Manual de usuario"
+        ]
+    },
+    {
+        id: 18,
+        nombre: "Extractor de Leche Materna Eléctrico Inteligente",
+        precio: 119,
+        imagen: "productosMuestra/extractorMama.webp",
+        categoria: "maternidad",
+        descripcion: "Extractor de leche eléctrico portátil, silencioso e inteligente con modos de masaje y succión para una extracción cómoda y eficiente.",
+        caracteristicas: [
+            "Diseño portátil y ligero",
+            "Pantalla LED HD",
+            "9 niveles ajustables por modo",
+            "Modo masaje",
+            "Modo succión",
+            "Rotación de 360° adaptable a diferentes formas de pecho",
+            "Carga USB",
+            "Funcionamiento silencioso"
+        ],
+        especificaciones: {
+            "Tipo": "Extractor de leche eléctrico portátil",
+            "Capacidad": "100 ml",
+            "Niveles": "9 niveles por modo",
+            "Alimentación": "Carga USB",
+            "Voltaje": "USB / 220 V",
+            "Material": "ABS, PP, silicona y PPSU",
+            "Dimensiones": "19.8 x 7.7 cm",
+            "Libre de": "BPA, ftalatos y nitrosaminas"
+        },
+        beneficios: [
+            "Extracción cómoda e indolora",
+            "Ayuda a evitar la acumulación de leche",
+            "Estimula la producción de leche materna",
+            "Portátil y fácil de transportar",
+            "Fácil de usar y limpiar",
+            "Ideal para uso posparto"
+        ],
+        incluye: [
+            "Extractor de leche eléctrico",
+            "Botella recolectora de 100 ml",
+            "Cable de carga USB",
+            "Manual de usuario"
+        ]
+    },
+    {
         id: 1,
         nombre: "Máquina Portátil de Café Espresso 3 en 1",
         precio: 199,
@@ -233,157 +355,7 @@ export const products = [
         incluye: [
             "Dos Ice Globes de regalo (Rosado o Celeste)"
         ]
-    },
-        // Nuevos productos
-
-        // Nuevos productos
-{
-    id: 16,
-    nombre: "Grifo Calentador Instantáneo de Agua",
-    precio: 89,
-    imagen: "productosMuestra/grifocalentador.webp",
-    categoria: "hogar",
-    descripcion: "Grifo calentador eléctrico instantáneo que proporciona agua caliente en 3 a 5 segundos sin necesidad de terma ni precalentamiento. Ideal para cocina o lavadero.",
-
-    caracteristicas: [
-        "Calentamiento rápido en 3 a 5 segundos",
-        "Pantalla LED de temperatura",
-        "Temperatura ajustable entre 30°C y 60°C",
-        "Protección contra fugas eléctricas",
-        "Funciona con agua fría y caliente",
-        "No requiere almacenamiento ni precalentamiento",
-        "Fácil instalación"
-    ],
-
-    especificaciones: {
-        "Tipo": "Grifo calentador instantáneo eléctrico",
-        "Potencia": "3000 W",
-        "Voltaje": "220 V",
-        "Temperatura": "30°C - 60°C",
-        "Protección": "IPX4",
-        "Presión de agua": "0.04 - 0.5 MPa",
-        "Material": "ABS y acero inoxidable",
-        "Longitud del cable": "90 cm"
-    },
-
-    beneficios: [
-        "Agua caliente al instante",
-        "Ahorra agua y energía",
-        "No necesita terma",
-        "Seguro gracias a la protección contra fugas",
-        "Ideal para cocina y lavadero",
-        "Uso sencillo y eficiente"
-    ],
-
-    incluye: [
-        "Grifo calentador instantáneo",
-        "Cable de alimentación integrado"
-    ]
-},
-
-{
-    id: 17,
-
-    nombre: "Masajeador de Cuello y Hombros 4D con Calor",
-
-    precio: 119,
-
-    imagen: "productosMuestra/masajeador.webp",
-
-    categoria: "bienestar",
-
-    descripcion: "Masajeador ergonómico 4D con calor terapéutico que simula el movimiento de manos humanas para aliviar la tensión en cuello, hombros, espalda y trapecios.",
-
-    caracteristicas: [
-        "Tecnología 4D de amasamiento profundo",
-        "Sistema biónico que imita manos humanas",
-        "10 puntos de contacto",
-        "2 niveles de calor terapéutico",
-        "3 niveles de intensidad",
-        "Diseño ergonómico",
-        "Uso en múltiples zonas del cuerpo",
-        "Batería recargable USB Tipo-C"
-    ],
-
-    especificaciones: {
-        "Tipo": "Masajeador 4D de cuello y hombros",
-        "Temperatura baja": "40°C",
-        "Temperatura alta": "45°C",
-        "Niveles de intensidad": "3",
-        "Batería": "2000 mAh",
-        "Peso": "0.7 kg",
-        "Carga": "USB Tipo-C (5V / 2A - 10W)",
-        "Material": "Silicona grado alimenticio y acabado tipo cuero"
-    },
-
-    beneficios: [
-        "Alivia la tensión muscular",
-        "Reduce la rigidez y la fatiga",
-        "Favorece la relajación diaria",
-        "Masaje profundo similar a manos humanas",
-        "Ideal para personas que trabajan sentadas",
-        "Puede utilizarse en cuello, espalda, piernas y zona lumbar"
-    ],
-
-    incluye: [
-        "Masajeador de cuello y hombros",
-        "Cable de carga Tipo-C",
-        "Manual de usuario"
-    ]
-},
-
-{
-    id: 18,
-
-    nombre: "Extractor de Leche Materna Eléctrico Inteligente",
-
-    precio: 119,
-
-    imagen: "productosMuestra/extractorMama.webp",
-
-    categoria: "maternidad",
-
-    descripcion: "Extractor de leche eléctrico portátil, silencioso e inteligente con modos de masaje y succión para una extracción cómoda y eficiente.",
-
-    caracteristicas: [
-        "Diseño portátil y ligero",
-        "Pantalla LED HD",
-        "9 niveles ajustables por modo",
-        "Modo masaje",
-        "Modo succión",
-        "Rotación de 360° adaptable a diferentes formas de pecho",
-        "Carga USB",
-        "Funcionamiento silencioso"
-    ],
-
-    especificaciones: {
-        "Tipo": "Extractor de leche eléctrico portátil",
-        "Capacidad": "100 ml",
-        "Niveles": "9 niveles por modo",
-        "Alimentación": "Carga USB",
-        "Voltaje": "USB / 220 V",
-        "Material": "ABS, PP, silicona y PPSU",
-        "Dimensiones": "19.8 x 7.7 cm",
-        "Libre de": "BPA, ftalatos y nitrosaminas"
-    },
-
-    beneficios: [
-        "Extracción cómoda e indolora",
-        "Ayuda a evitar la acumulación de leche",
-        "Estimula la producción de leche materna",
-        "Portátil y fácil de transportar",
-        "Fácil de usar y limpiar",
-        "Ideal para uso posparto"
-    ],
-
-    incluye: [
-        "Extractor de leche eléctrico",
-        "Botella recolectora de 100 ml",
-        "Cable de carga USB",
-        "Manual de usuario"
-    ]
-}
-
+    }
 ];
 
 // Mapeo de imágenes de productos por ID
