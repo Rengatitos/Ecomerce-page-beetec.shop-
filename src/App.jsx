@@ -19,7 +19,7 @@ function HomePage({ onViewDetails }) {
       <Catalog onViewDetails={onViewDetails} />
       <Reviews />
       <Contact />
-      <ChatBot />
+      <ChatBot isMainPage={true} />
     </>
   );
 }

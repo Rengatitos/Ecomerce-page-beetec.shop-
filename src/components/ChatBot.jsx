@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 import '../styles/ChatBot.css';
 
 const WHATSAPP_NUMBER = "51919477248";
@@ -120,7 +121,7 @@ const obtenerEnvio = (ciudad) => {
   };
 };
 
-export default function ChatBot({ product }) {
+export default function ChatBot({ product, isMainPage = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -652,22 +653,14 @@ Quiero reservar este producto para la próxima vez que haya stock. 📦`;
   };
 
   return (
-    <div className="chatbot-container">
+    <div className={`chatbot-container ${isOpen ? 'open' : ''} ${isMainPage ? 'main-page-bot' : ''}`}>
       <button
         className={`chatbot-button ${isOpen ? 'open' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
         title="Chat de ventas"
         type="button"
       >
-        <img
-  src="https://img.freepik.com/vector-premium/whatsapp-logo-iconic-speech-bubble-and-phone-symbol-on-green_678821-509.jpg?semt=ais_hybrid&w=740&q=80"
-  alt="WhatsApp"
-  style={{
-    width:"40px",
-    height:"40px",
-    borderRadius:"50%"
-  }}
-/>
+        <FaWhatsapp size={36} color="white" />
       </button>
 
       {isOpen && (

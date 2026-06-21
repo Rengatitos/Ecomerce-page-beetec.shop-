@@ -234,10 +234,12 @@ a { text-decoration: none; color: inherit; }
     cursor: pointer;
 }
 
-.product-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.15);
+@media (hover: hover) {
+    .product-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(255, 215, 0, 0.15);
+    }
 }
 
 .product-image {
@@ -297,9 +299,11 @@ a { text-decoration: none; color: inherit; }
     transition: var(--transition);
 }
 
-.product-btn:hover {
-    background: var(--primary-dark);
-    transform: scale(1.05);
+@media (hover: hover) {
+    .product-btn:hover {
+        background: var(--primary-dark);
+        transform: scale(1.05);
+    }
 }
 
 /* Reviews Section */

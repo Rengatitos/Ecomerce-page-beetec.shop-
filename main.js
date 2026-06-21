@@ -239,7 +239,7 @@ function renderProducts() {
                 <ul class="product-features">
                     ${product.caracteristicas.slice(0, 3).map(feature => `<li>${feature}</li>`).join('')}
                 </ul>
-                <button class="btn-product" onclick="event.stopPropagation(); openProductModal(${product.id})">
+                <button class="btn-product">
                     Ver Detalles
                 </button>
             </div>

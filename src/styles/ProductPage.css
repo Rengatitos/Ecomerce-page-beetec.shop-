@@ -558,8 +558,10 @@
   transition: all 0.3s ease;
 }
 
-.related-product-card:hover {
-  transform: translateY(-5px);
+@media (hover: hover) {
+  .related-product-card:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .related-product-image {

@@ -18,7 +18,7 @@ export default function ProductCard({ product, onViewDetails }) {
         <p className="product-description">{product.descripcion}</p>
         <div className="product-footer">
           <span className="product-price">S/.{product.precio}</span>
-          <button className="product-btn" onClick={handleViewDetails}>
+          <button className="product-btn" type="button">
             Ver
           </button>
         </div>

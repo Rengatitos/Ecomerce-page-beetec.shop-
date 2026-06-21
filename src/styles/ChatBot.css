@@ -1,37 +1,42 @@
 /* ===== BOTÓN FLOTANTE ===== */
 
 .chatbot-container{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  z-index:9999;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  pointer-events: none; /* <-- Desactiva clics en áreas vacías del contenedor */
 }
 
 .chatbot-button{
-  width:70px;
-  height:70px;
-  border:none;
-  border-radius:50%;
-  cursor:pointer;
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 
-  background:#25D366;
+  background: #25D366;
 
-  font-size:30px;
+  font-size: 30px;
 
-  color:white;
+  color: white;
 
   box-shadow:
   0 8px 20px rgba(0,0,0,.25);
 
-  transition:.3s;
+  transition: .3s;
+  pointer-events: auto; /* <-- Permite pulsar el botón de WhatsApp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chatbot-button:hover{
-  transform:scale(1.08);
+  transform: scale(1.08);
 }
 
 .chatbot-button.open{
-  background:#128C7E;
+  background: #128C7E;
 }
 
 
@@ -40,22 +45,23 @@
 
 .chatbot-window{
 
-  width:390px;
+  width: 390px;
 
-  height:700px;
+  height: 700px;
 
-  background:white;
+  background: white;
 
-  border-radius:18px;
+  border-radius: 18px;
 
-  overflow:hidden;
+  overflow: hidden;
 
-  display:flex;
+  display: flex;
 
-  flex-direction:column;
+  flex-direction: column;
 
   box-shadow:
   0 10px 40px rgba(0,0,0,.25);
+  pointer-events: auto; /* <-- Permite pulsar los botones y campos de texto dentro del chat */
 }
 
 
@@ -64,68 +70,68 @@
 
 .chatbot-header{
 
-  height:70px;
+  height: 70px;
 
-  background:#075E54;
+  background: #075E54;
 
-  color:white;
+  color: white;
 
-  display:flex;
+  display: flex;
 
-  align-items:center;
+  align-items: center;
 
-  justify-content:space-between;
+  justify-content: space-between;
 
-  padding:0 18px;
+  padding: 0 18px;
 }
 
 .chatbot-header h3{
 
-  margin:0;
+  margin: 0;
 
-  display:flex;
+  display: flex;
 
-  align-items:center;
+  align-items: center;
 
-  gap:12px;
+  gap: 12px;
 
-  font-size:18px;
+  font-size: 18px;
 
-  font-weight:600;
+  font-weight: 600;
 }
 
 .chatbot-header h3::before{
 
-  content:"";
+  content: "";
 
-  width:42px;
+  width: 42px;
 
-  height:42px;
+  height: 42px;
 
-  border-radius:50%;
+  border-radius: 50%;
 
-  background-image:url("https://img.freepik.com/vector-premium/whatsapp-logo-iconic-speech-bubble-and-phone-symbol-on-green_678821-509.jpg?semt=ais_hybrid&w=740&q=80");
+  background-image: url("https://img.freepik.com/vector-premium/whatsapp-logo-iconic-speech-bubble-and-phone-symbol-on-green_678821-509.jpg?semt=ais_hybrid&w=740&q=80");
 
-  background-size:cover;
+  background-size: cover;
 
-  background-position:center;
+  background-position: center;
 
-  flex-shrink:0;
+  flex-shrink: 0;
 }
 
 /* ===== BOTÓN CERRAR ===== */
 
 .close-btn{
 
-  border:none;
+  border: none;
 
-  background:none;
+  background: none;
 
-  color:white;
+  color: white;
 
-  cursor:pointer;
+  cursor: pointer;
 
-  font-size:22px;
+  font-size: 22px;
 }
 
 
@@ -134,23 +140,23 @@
 
 .chatbot-messages{
 
-  flex:1;
+  flex: 1;
 
-  padding:18px;
+  padding: 18px;
 
-  overflow-y:auto;
+  overflow-y: auto;
 
-  background-image:url("https://i.pinimg.com/474x/b1/fe/e2/b1fee2bca899ad87e5683fd54c113678.jpg?nii=t");
+  background-image: url("https://i.pinimg.com/474x/b1/fe/e2/b1fee2bca899ad87e5683fd54c113678.jpg?nii=t");
 
-  background-size:cover;
+  background-size: cover;
 
-  background-position:center;
+  background-position: center;
 
-  display:flex;
+  display: flex;
 
-  flex-direction:column;
+  flex-direction: column;
 
-  gap:12px;
+  gap: 12px;
 }
 
 
@@ -159,34 +165,34 @@
 
 .message{
 
-  display:flex;
+  display: flex;
 }
 
 .message.bot{
 
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 
 .message.user{
 
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
 
 .message-content{
 
-  max-width:75%;
+  max-width: 75%;
 
-  padding:10px 14px;
+  padding: 10px 14px;
 
-  border-radius:10px;
+  border-radius: 10px;
 
-  font-size:14px;
+  font-size: 14px;
 
-  line-height:1.5;
+  line-height: 1.5;
 
-  white-space:pre-line;
+  white-space: pre-line;
 
-  word-wrap:break-word;
+  word-wrap: break-word;
 
   box-shadow:
   0 2px 5px rgba(0,0,0,.1);
@@ -198,9 +204,9 @@
 
 .message.bot .message-content{
 
-  background:white;
+  background: white;
 
-  border-top-left-radius:0;
+  border-top-left-radius: 0;
 }
 
 
@@ -209,9 +215,9 @@
 
 .message.user .message-content{
 
-  background:#DCF8C6;
+  background: #DCF8C6;
 
-  border-top-right-radius:0;
+  border-top-right-radius: 0;
 }
 
 
@@ -220,11 +226,11 @@
 
 .chatbot-options{
 
-  padding:15px;
+  padding: 15px;
 
-  background:#F0F2F5;
+  background: #F0F2F5;
 
-  border-top:1px solid #ddd;
+  border-top: 1px solid #ddd;
 }
 
 
@@ -239,21 +245,21 @@
 
 .chat-btn-submit{
 
-  width:100%;
+  width: 100%;
 
-  border:none;
+  border: none;
 
-  padding:12px;
+  padding: 12px;
 
-  border-radius:25px;
+  border-radius: 25px;
 
-  margin-bottom:10px;
+  margin-bottom: 10px;
 
-  cursor:pointer;
+  cursor: pointer;
 
-  font-size:14px;
+  font-size: 14px;
 
-  transition:.3s;
+  transition: .3s;
 }
 
 
@@ -264,16 +270,16 @@
 
 .chat-btn-submit{
 
-  background:#25D366;
+  background: #25D366;
 
-  color:white;
+  color: white;
 }
 
 .chat-btn-primary:hover,
 
 .chat-btn-submit:hover{
 
-  background:#20b95b;
+  background: #20b95b;
 }
 
 
@@ -284,16 +290,16 @@
 
 .chat-btn-city{
 
-  background:white;
+  background: white;
 
-  border:1px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 .chat-btn-secondary:hover,
 
 .chat-btn-city:hover{
 
-  background:#ececec;
+  background: #ececec;
 }
 
 
@@ -302,11 +308,11 @@
 
 .chat-form{
 
-  display:flex;
+  display: flex;
 
-  flex-direction:column;
+  flex-direction: column;
 
-  gap:10px;
+  gap: 10px;
 }
 
 .chatbot-status{
@@ -319,24 +325,24 @@
 
 .chat-form select{
 
-  width:100%;
+  width: 100%;
 
-  padding:12px;
+  padding: 12px;
 
-  border:1px solid #ccc;
+  border: 1px solid #ccc;
 
-  border-radius:10px;
+  border-radius: 10px;
 
-  outline:none;
+  outline: none;
 
-  font-size:14px;
+  font-size: 14px;
 }
 
 .chat-form input:focus,
 
 .chat-form select:focus{
 
-  border-color:#25D366;
+  border-color: #25D366;
 }
 
 
@@ -345,11 +351,11 @@
 
 .success-message{
 
-  text-align:center;
+  text-align: center;
 
-  color:#128C7E;
+  color: #128C7E;
 
-  font-weight:bold;
+  font-weight: bold;
 }
 
 
@@ -358,14 +364,14 @@
 
 .chatbot-messages::-webkit-scrollbar{
 
-  width:6px;
+  width: 6px;
 }
 
 .chatbot-messages::-webkit-scrollbar-thumb{
 
-  background:#c8c8c8;
+  background: #c8c8c8;
 
-  border-radius:10px;
+  border-radius: 10px;
 }
 
 /* ================================== */
@@ -374,17 +380,42 @@
 
 @media (max-width: 768px){
 
+  .chatbot-container.open{
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    z-index: 99999;
+    pointer-events: auto; /* Permite clicks/taps en el chat abierto */
+  }
+
   .chatbot-container{
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    bottom: 20px;
 
-    width:100vw;
+    right: 20px;
 
-    height:100vh;
+    width: auto;
 
-    z-index:99999;
+    height: auto;
+
+    z-index: 99999;
+    pointer-events: none; /* <-- Evita el bloqueo del resto de la pantalla en móviles */
+  }
+
+  .chatbot-container.main-page-bot{
+
+    bottom: 50px;
+
+    right: 50px;
+
   }
 
 
@@ -392,15 +423,11 @@
 
   .chatbot-button{
 
-    position:fixed;
+    width: 60px;
 
-    bottom:20px;
+    height: 60px;
 
-    right:20px;
-
-    width:65px;
-
-    height:65px;
+    pointer-events: auto; /* <-- El botón sigue siendo pulsable */
   }
 
 
@@ -408,21 +435,21 @@
 
   .chatbot-window{
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    inset: 0;
 
-    width:100vw;
+    width: 100vw;
 
-    height:100vh;
+    height: 100vh;
 
-    border-radius:0;
+    border-radius: 0;
 
-    max-width:none;
+    max-width: none;
 
-    max-height:none;
+    max-height: none;
 
-    overflow:hidden;
+    overflow: hidden;
   }
 
 
@@ -430,13 +457,13 @@
 
   .chatbot-header{
 
-    min-height:70px;
+    min-height: 70px;
 
-    height:70px;
+    height: 70px;
 
-    padding:0 16px;
+    padding: 0 16px;
 
-    flex-shrink:0;
+    flex-shrink: 0;
   }
 
 
@@ -444,13 +471,13 @@
 
   .chatbot-messages{
 
-    flex:1;
+    flex: 1;
 
-    overflow-y:auto;
+    overflow-y: auto;
 
-    padding:15px;
+    padding: 15px;
 
-    min-height:0;
+    min-height: 0;
   }
 
 
@@ -458,13 +485,13 @@
 
   .chatbot-options{
 
-    padding:12px;
+    padding: 12px;
 
-    flex-shrink:0;
+    flex-shrink: 0;
 
-    max-height:45vh;
+    max-height: 45vh;
 
-    overflow-y:auto;
+    overflow-y: auto;
   }
 
 
@@ -478,9 +505,9 @@
 
   .chat-btn-submit{
 
-    min-height:50px;
+    min-height: 50px;
 
-    font-size:15px;
+    font-size: 15px;
   }
 
 
@@ -488,18 +515,18 @@
 
   .chat-form{
 
-    gap:12px;
+    gap: 12px;
   }
 
   .chat-form input,
 
   .chat-form select{
 
-    min-height:50px;
+    min-height: 50px;
 
-    font-size:16px;
+    font-size: 16px;
 
-    padding:14px;
+    padding: 14px;
   }
 
 
@@ -507,45 +534,45 @@
 
   .message-content{
 
-    max-width:85%;
+    max-width: 85%;
 
-    font-size:15px;
+    font-size: 15px;
 
-    line-height:1.5;
+    line-height: 1.5;
   }
 
 }
 
 .chatbot-window{
 
-  height:100dvh;
+  height: 100dvh;
 }
 
 @media (max-width:768px){
 
   .chatbot-window{
 
-    height:100dvh;
+    height: 100dvh;
   }
 
 }
 
 .chatbot-container{
 
-  overscroll-behavior:none;
+  overscroll-behavior: none;
 }
 
 .chatbot-window{
 
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .chatbot-messages{
 
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling: touch;
 }
 
 .chatbot-button.open{
 
-  display:none;
+  display: none;
 }
