@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import ProductPage from './components/ProductPage';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
+import ChatBot from './components/ChatBot';
 
 function HomePage({ onViewDetails }) {
   return (
@@ -18,6 +19,7 @@ function HomePage({ onViewDetails }) {
       <Catalog onViewDetails={onViewDetails} />
       <Reviews />
       <Contact />
+      <ChatBot />
     </>
   );
 }
